@@ -4,6 +4,7 @@ import Legend from "./Legend";
 import CovidMap from "./CovidMap";
 import LoadCountriesTask from "../tasks/LoadCountries";
 import legendItems from "../entities/LegenItems";
+// import axios from "axios";
 
 const Covid19 = () => {
   const [countries, setCountries] = useState([]);
@@ -15,6 +16,24 @@ const Covid19 = () => {
   };
 
   useEffect(load, []);
+
+  // useEffect(() => {
+  //   async function mapEffect() {
+  //     let response;
+
+  //     try {
+  //       response = await axios.get("https://corona.lmao.ninja/v2/countries");
+  //     } catch (e) {
+  //       console.log(`Failed to fetch countries: ${e.message}`, e);
+  //       return;
+  //     }
+
+  //     const { data = [] } = response;
+  //     console.log("myData", data);
+  //   }
+
+  //   mapEffect()
+  // }, []);
 
   return (
     <div>
